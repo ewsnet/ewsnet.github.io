@@ -10,7 +10,7 @@ email: 2017csb1104@iitrpr.ac.in,smita.deb@iitrpr.ac.in
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   
 footer_text: >
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Developed at IIT Ropar, by Sahil
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Developed by <a href="https://sahilsid.github.io"> Sahil Sidheekh </a> at IIT Ropar, 
   
 url:  172.26.5.113 # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
