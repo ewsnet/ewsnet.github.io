@@ -135,16 +135,19 @@
             <hr class="style10"> {% endcomment %}
 
             <div class="row">
-              <div class="col-3">
-                <div class="list-group">
-                  <button class="display_real_data list-group-item list-group-item-action active">
+              <div class="col-3"></div> 
+              <div class="col-6">
+                <div class="list-group list-group-horizontal">
+                  <button class="display_real_data list-group-item list-group-item-action active" style="text-align:center">
                    Real Data
                   </button>
-                  <button class="display_simulated_data list-group-item list-group-item-action">Simulated Data</button>
+                  <button class="display_simulated_data list-group-item list-group-item-action"  style="text-align:center">Simulated Data</button>
                 </div>    
               </div>
-              <div class="col-9">
-                  <div id="real_world_data" style="display:display">
+            </div>
+            <div class = "row">
+              <div class="col-12">
+                  <div id="real_world_data" style="display:display;padding:2%">
                     <p>
                       Click on the buttons provided below to load the cooresponding real world data. For further details, see the references provided.
                     </p>
@@ -156,55 +159,137 @@
                     </div>
                   </div>
 
-                  <div id="simulated_data" style="display:none">
-                    <p>
-                      Provide the parameters for the differential equation
-                    </p>
-                    
-                     <div class="form-row">
-                      <div class="col">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Maximum Growth Rate ($r$) </span>
-                          </div>
-                          <input type="number" class="form-control" placeholder=1 value=1 name="max_growth_rate" aria-label="max_growth_rate" aria-describedby="basic-addon1">
-                        </div>
+                  <div id="simulated_data" style="display:none;padding:2%">
+                    <div class="row">
+                      <div class="col-3 " style="background-color:rgba(0,50,100,0.0);padding:2%">
+                        <div class="list-group list-group bifuration_model_list">
+                          <button class="display_saddle_node_bifurcation list-group-item list-group-item-action active" style="text-align:center">
+                          Saddle Node
+                          </button>
+                          <button class="display_transcritical_bifurcation list-group-item list-group-item-action"  style="text-align:center">Transcritical</button>
+                        </div>    
                       </div>
-                      <div class="col">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon2">Carrying Capacity ($k$) </span>
-                          </div>
-                          <input type="number" class="form-control" placeholder=5.2 value=5.2 name="carrying_capacity" aria-label="carrying_capacity" aria-describedby="basic-addon2">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon3">Half Saturation Constant ($b$) </span>
-                          </div>
-                          <input type="number" class="form-control" placeholder=1 value=1 name="half_saturation_constant" aria-label="half_saturation_constant" aria-describedby="basic-addon3">
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon4">Bifurcation Parameter ($c$) </span>
-                          </div>
-                          <input type="number" class="form-control" placeholder=1 value=1 name="bifurcation_parameter" aria-label="bifurcation_parameter" aria-describedby="basic-addon4">
-                        </div>
-                      </div>
-                    </div>
-                    <div style="text-align:center">
-                      <button type="button" class="btn btn-primary  z-depth-1" id="generate_simulated_data">Generate Data</button>
-                    </div>
 
-                  <div class="text-center loading_icon_sde" style="padding:1.5%;display:none">
-                      <div class="spinner-border text-primary"></div>
-                      <div id="loading_message_sde" style="padding:1%"></div>
-                  </div>
+                      <div class="col-9">
+                        {% comment %} Saddle Node Bifurcation {% endcomment %}
+                        <div id="saddle_node_bifurcation" style="padding:2%">
+                          <p style="text-align:center">
+                            <u><b>Differential Equation For Saddle Node Bifurcation</b></u> <br>
+                          </p>
+                          <p>
+                            \begin{equation*}
+                            \frac{dN}{dt} = rN(1-\frac{N}{K})-\frac{cN^{2}}{b^{2}+N^{2}}\
+                            \end{equation*}
+                            Where,
+                            <ul>
+                              <li>$r$ represents the maximum growth rate</li>
+                              <li>$k $ is the carrying capacity</li>
+                              <li>$b$ is the half saturation constant</li>
+                              <li>$c$ is the bifurcation parameter</li>
+                            </ul>
+                            Enter the required parameter values for the differential equation below
+                          </p>
+                          <hr class="style10">
+                          
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">$r$ </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=1 value=1 name="max_growth_rate" aria-label="max_growth_rate" aria-describedby="basic-addon1">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon2">$k$ </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=5.2 value=5.2 name="carrying_capacity" aria-label="carrying_capacity" aria-describedby="basic-addon2">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon3">$b$ </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=1 value=1 name="half_saturation_constant" aria-label="half_saturation_constant" aria-describedby="basic-addon3">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon4">$c$ </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=1 value=1 name="bifurcation_parameter" aria-label="bifurcation_parameter" aria-describedby="basic-addon4">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% comment %} Transcritical Bifurcation {% endcomment %}
+                        <div id="transcritical_bifurcation" style="display:none;padding:2%">
+                          <p  style="text-align:center">
+                            <u><b>Differential Equation For Transcritical Bifurcation</b></u> <br>
+                          </p>
+                          <p>
+                            \begin{equation*}
+                            \frac{dN}{dt} =  rN(1-\frac{N}{K})-{cN}
+                            \end{equation*}
+                            Where,
+                            <ul>
+                              <li>$r$ represents the maximum growth rate</li>
+                              <li>$k $ is the carrying capacity</li>
+                              <li>$c$ denotes maximum grazing rate</li>
+                            </ul>
+                            Enter the required parameter values for the differential equation below
+                          </p>
+                          <hr class="style10">
+                          
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">$r$ </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=2 value=2 name="max_growth_rate" aria-label="max_growth_rate" aria-describedby="basic-addon1">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon2">$k$ </span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=10 value=10 name="carrying_capacity" aria-label="carrying_capacity" aria-describedby="basic-addon2">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon4">$c$</span>
+                                </div>
+                                <input type="number" class="form-control" placeholder=1 value=1 name="max_grazing_rate" aria-label="max_grazing_rate" aria-describedby="basic-addon4">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {% comment %}  End of Equations and Parameters {% endcomment %}
+                        <div style="text-align:center">
+                          <button type="button" class="btn btn-primary  z-depth-1" id="generate_simulated_data">Generate Data</button>
+                        </div>
+
+                        <div class="text-center loading_icon_sde" style="padding:1.5%;display:none">
+                            <div class="spinner-border text-primary"></div>
+                            <div id="loading_message_sde" style="padding:1%"></div>
+                        </div>
+                      </div> 
+                    </div>
+                    
+    
 
                   </div>
               </div>

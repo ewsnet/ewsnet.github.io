@@ -33,8 +33,34 @@ $( ".display_simulated_data" ).click(function() {
   $("#simulated_data").show()
 });
 
+$( ".display_saddle_node_bifurcation" ).click(function() {
+  // $(".display_real_data")
+  $('.display_transcritical_bifurcation').removeClass("active")
+  $('.display_saddle_node_bifurcation').addClass("active")
+  $("#transcritical_bifurcation").hide()
+  $("#saddle_node_bifurcation").show()
+});
+
+
+$( ".display_transcritical_bifurcation" ).click(function() {
+  // $(".display_real_data")
+  $('.display_saddle_node_bifurcation').removeClass("active")
+  $('.display_transcritical_bifurcation').addClass("active")
+  $("#saddle_node_bifurcation").hide()
+  $("#transcritical_bifurcation").show()
+
+});
+
 $( "#generate_simulated_data" ).click(function() {
-  setTimeout(generate_simulated_data, 50);
+  var models = {"saddle_node":generate_saddle_node,"transcritical":generate_transcritical};
+  var generator_function;
+  for (const [ key, value ] of Object.entries(models)) {
+    var button_name = ".display_"+key+"_bifurcation"
+    if(button_name,$(button_name).hasClass('active')){
+      generator_function = value
+    }   
+  }
+  setTimeout(generator_function, 50);
   $('.loading_icon_sde').show()
   $( '#loading_message_sde' ).html( '<strong> Simulating stochastic time series data by solving the differential equation... </strong>');
 });
@@ -189,11 +215,11 @@ function argMax(array) {
   return array.map((x, i) => [x, i]).reduce((r, a) => (a[0] > r[0] ? a : r))[1];
 }
 
-function generate_simulated_data(){
-  var c =  parseFloat($("input[name*='bifurcation_parameter']").val());
-  var k =  parseFloat($("input[name*='carrying_capacity']").val());
-  var r =  parseFloat($("input[name*='max_growth_rate']").val());
-  var b =  parseFloat($("input[name*='half_saturation_constant']").val());
+function generate_saddle_node(){
+  var c =  parseFloat($("#saddle_node_bifurcation :input[name*='bifurcation_parameter']").val());
+  var k =  parseFloat($("#saddle_node_bifurcation :input[name*='carrying_capacity']").val());
+  var r =  parseFloat($("#saddle_node_bifurcation :input[name*='max_growth_rate']").val());
+  var b =  parseFloat($("#saddle_node_bifurcation :input[name*='half_saturation_constant']").val());
 
   const n_max=400;    
   const c_max=3;
@@ -217,6 +243,43 @@ function generate_simulated_data(){
     while(t < t_max){
       aa  = r*x*(1-(x/k));
       aaa = c*(Math.pow(x,2))/((Math.pow(b,2))+(Math.pow(x,2)));
+      x   = x + (aa-aaa)*dt + sigma*d3.randomNormal(0, 1)()*x*(Math.sqrt(dt))*y; 
+      y   = corr*y + (Math.sqrt(1-Math.pow(corr,2)))*d3.randomNormal(0, 1)();
+      t   = t+dt;
+    }      
+    series.push(x)        
+  }     
+
+  $('.loading_icon_sde').hide()
+  $("#time_series").val(series);
+}
+
+function generate_transcritical(){
+  var c =  parseFloat($("#transcritical_bifurcation :input[name*='max_grazing_rate']").val());
+  var k =  parseFloat($("#transcritical_bifurcation :input[name*='carrying_capacity']").val());
+  var r =  parseFloat($("#transcritical_bifurcation :input[name*='max_growth_rate']").val());
+  const n_max=400;    
+  const c_max=3;
+  const t_max=300;
+  const dt=0.01;
+  var da = (c_max-c)/n_max;
+  var n = 0;
+  var t = 0;
+  var h = 1;
+  var corr = 0.0;     
+  var sigma = 0.10
+  var x0 = 70+Math.random();
+  var x = x0;
+
+  var series = []
+  while (n<n_max) {
+    n=n+1; 
+    t=0.0;
+    c=c+da;
+    y=d3.randomNormal(0, 1)();
+    while(t < t_max){
+      aa  = r*x*(1-(x/k));
+      aaa = c*x;
       x   = x + (aa-aaa)*dt + sigma*d3.randomNormal(0, 1)()*x*(Math.sqrt(dt))*y; 
       y   = corr*y + (Math.sqrt(1-Math.pow(corr,2)))*d3.randomNormal(0, 1)();
       t   = t+dt;
