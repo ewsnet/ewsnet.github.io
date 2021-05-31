@@ -91,16 +91,126 @@
           </div>
           <div class="alert alert-light" role="alert">
             <p>
-            To process your time series and visualize the predictions of EWSNet, enter the time series values (separated by comma, blankspace or newline) in the textbox below and click <b>Process</b>.
-            <br>You may also use the buttons provided below to load <b>predefined</b> time series obtained from natural systems, known to exhibit a catastrophic transition.
+              Here you can load the time series data and visualize them prior to making predictions on them using EWSNet. We provide the following two options for generating data.
+              <ul style="color:black">
+                <li>
+                  Load some of the well studied <b>real world  </b> time series data obtained from natural systems  <b> literature </b>, known to exhibit a catastrophic transitions.
+                </li>
+                <li>
+                  <b>Simulate</b> stochastic time series data by varying the parameters of the differential equation.
+                    <p>
+                    \begin{equation*}
+                    \frac{dN}{dt} = rN(1-\frac{N}{K})-\frac{cN^{2}}{b^{2}+N^{2}}\
+                    \end{equation*}
+                    </p>
+                    Where,
+                    <ul>
+                      <li>$r$ represents the maximum growth rate</li>
+                      <li>$k $ is the carrying capacity</li>
+                      <li>$b$ is the half saturation constant</li>
+                      <li>$c$ is the bifurcation parameter</li>
+                    </ul>
+                  We use the Euler Maruyama method to solve the differential equation.
+                </li>
+              </ul>
             </p>
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <hr class="style10">
+            <p>
+              <b>Load Data</b> <br>
+              You can chose to load real world data or simulate stochastic time series using the options given in pane below.
+            </p>
+            <hr class="style10">
+            
+            {% comment %} <div class="btn-group" role="group" aria-label="Basic example">
               <d-cite key="tripati2005eocene"> </d-cite><button type="button" class="btn btn-info btn-sm" style="margin:0.5%" onclick="document.getElementById('time_series').value = '12.185,14.142,13.343,12.745,13.964,12.151,13.769,18.289,15.694,11.312,11.691,17.302,20.733,15.958,19.471,13.383,11.208,16.484,11.956,20.585,22.377,14.403,17.615,14.478,22.58,27.211,29.037,19.73,21.506,18.756,31.187,36.339,40.272,43.008,36.023,39.764,46.011,56.769,57.737,50.347,51.63,52.64,49.966,57.444,41.997,56.65,45.978,47.33,58.682,66.348,64.119,55.709,54.726,57.951,51.079,52.501,43.362,45.553,47.063,48.696,52.725,54.47,59.286,57.371,66.379,56.622,56.652,47.626,44.583,43.546,45.021,39.422,52.532,42.555,53.876,46.198,51.77,50.891,71.398,63.84,73.206,77.715,70.913,72.908,70.014,73.288,68.34,54.73,47.669,20.298,20.37,27.376,39.42,44.887,46.155,41.658,32.114,49.494,55.06,59.721,63.907,67.581,61.909,55.188,48.698,19.517,20.621,18.307,14.161,17.631,17.034,17.484,17.772,14.462,12.819,10.036,12.807,14.855,18.265,22.211,19.416,25.806,33.427,24.678,26.487,24.101,36.068,26.132,29.199,24.506,26.952,26.453,22.486,26.932,30.342,33.539,36.675,36.211,43.724,47.684,36.432,46.488,34.926,47.46,47.16,46.861,48.706,46.643,50.136,53.044,51.771,50.55,45.909,41.96,44.809,36.003,53.257,20.206,41.968,34.217,38.148,34.488,33.343,23.322,12.32,19.534,11.38,19.164,25.157,28.65,27.092,25.367,23.981,20.407,18.983,14.617,10.771,7.6827,5.9902,4.7051,3.1334,0.87425,1.2069,2.8629,4.5827,10.519,19.077'">End of Greenhouse</button>
               <d-cite key="chen2018rising"> </d-cite><button type="button" class="btn btn-primary btn-sm" style="margin:0.5%" onclick="document.getElementById('time_series').value = '0.0000000e+00,0.0000000e+00,0.0000000e+00,0.0000000e+00,2.1686700e+00,1.2650600e+00,9.0361400e-01,9.9397600e+00,2.7108400e+00,9.9397600e+00,6.5060200e+00,5.4216900e+00,1.1385500e+01,1.0301200e+01,1.2469900e+01,8.4939800e+00,3.4337300e+00,1.0120500e+01,2.1325300e+01,2.2771100e+01,4.8795200e+00,1.0120500e+01,1.8795200e+01,9.2168700e+00,1.3915700e+01,9.5783100e+00,8.6747000e+00,2.3313300e+01,5.1325300e+01,2.3674700e+01,3.3433700e+01,9.9397600e+00,6.5060200e+00,6.8674700e+00,6.3253000e+00,6.5060200e+00,1.7349400e+01,4.0843400e+01,2.3132500e+01,1.7168700e+01,1.9879500e+01,1.8433700e+01,3.5783100e+01,3.5241000e+01,3.5783100e+01,4.5542200e+01,5.1144600e+01,4.8072300e+01,4.8975900e+01,3.0765300e+01,4.6071400e+01,3.1003000e+01,4.0867300e+01,3.0050000e+01,4.1479600e+01,4.3928600e+01,4.5000000e+01,4.9000000e+01,3.8100000e+01'">Dryland Ecosystem</button>
               <d-cite key="demenocal2001cultural"> </d-cite><button type="button" class="btn btn-indigo btn-sm" style="margin:0.5%" onclick="document.getElementById('time_series').value = '41.555,41.661,41.563,41.35,41.83,42.107,42.315,44.034,42.24,42.597,44.596,45.048,44.125,46.378,44.61,45.133,47.141,45.924,45.468,43.406,44.915,45.976,45.9'">Desertification</button>
+            </div> {% endcomment %}
+
+            {% comment %} <hr class="style10">
+              <p>
+                <b>Simulate Data</b> <br>
+                Fill in the parameter values
+              </p>
+            <hr class="style10"> {% endcomment %}
+
+            <div class="row">
+              <div class="col-3">
+                <div class="list-group">
+                  <button class="display_real_data list-group-item list-group-item-action active">
+                   Real Data
+                  </button>
+                  <button class="display_simulated_data list-group-item list-group-item-action">Simulated Data</button>
+                </div>    
+              </div>
+              <div class="col-9">
+                  <div id="real_world_data" style="display:display">
+                    <p>
+                      Click on the buttons provided below to load the cooresponding real world data. For further details, see the references provided.
+                    </p>
+                    
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <d-cite key="tripati2005eocene"> </d-cite><button type="button" class="btn btn-info btn-sm" style="margin:0.5%" onclick="document.getElementById('time_series').value = '12.185,14.142,13.343,12.745,13.964,12.151,13.769,18.289,15.694,11.312,11.691,17.302,20.733,15.958,19.471,13.383,11.208,16.484,11.956,20.585,22.377,14.403,17.615,14.478,22.58,27.211,29.037,19.73,21.506,18.756,31.187,36.339,40.272,43.008,36.023,39.764,46.011,56.769,57.737,50.347,51.63,52.64,49.966,57.444,41.997,56.65,45.978,47.33,58.682,66.348,64.119,55.709,54.726,57.951,51.079,52.501,43.362,45.553,47.063,48.696,52.725,54.47,59.286,57.371,66.379,56.622,56.652,47.626,44.583,43.546,45.021,39.422,52.532,42.555,53.876,46.198,51.77,50.891,71.398,63.84,73.206,77.715,70.913,72.908,70.014,73.288,68.34,54.73,47.669,20.298,20.37,27.376,39.42,44.887,46.155,41.658,32.114,49.494,55.06,59.721,63.907,67.581,61.909,55.188,48.698,19.517,20.621,18.307,14.161,17.631,17.034,17.484,17.772,14.462,12.819,10.036,12.807,14.855,18.265,22.211,19.416,25.806,33.427,24.678,26.487,24.101,36.068,26.132,29.199,24.506,26.952,26.453,22.486,26.932,30.342,33.539,36.675,36.211,43.724,47.684,36.432,46.488,34.926,47.46,47.16,46.861,48.706,46.643,50.136,53.044,51.771,50.55,45.909,41.96,44.809,36.003,53.257,20.206,41.968,34.217,38.148,34.488,33.343,23.322,12.32,19.534,11.38,19.164,25.157,28.65,27.092,25.367,23.981,20.407,18.983,14.617,10.771,7.6827,5.9902,4.7051,3.1334,0.87425,1.2069,2.8629,4.5827,10.519,19.077'">End of Greenhouse</button>
+                      <d-cite key="chen2018rising"> </d-cite><button type="button" class="btn btn-primary btn-sm" style="margin:0.5%" onclick="document.getElementById('time_series').value = '0.0000000e+00,0.0000000e+00,0.0000000e+00,0.0000000e+00,2.1686700e+00,1.2650600e+00,9.0361400e-01,9.9397600e+00,2.7108400e+00,9.9397600e+00,6.5060200e+00,5.4216900e+00,1.1385500e+01,1.0301200e+01,1.2469900e+01,8.4939800e+00,3.4337300e+00,1.0120500e+01,2.1325300e+01,2.2771100e+01,4.8795200e+00,1.0120500e+01,1.8795200e+01,9.2168700e+00,1.3915700e+01,9.5783100e+00,8.6747000e+00,2.3313300e+01,5.1325300e+01,2.3674700e+01,3.3433700e+01,9.9397600e+00,6.5060200e+00,6.8674700e+00,6.3253000e+00,6.5060200e+00,1.7349400e+01,4.0843400e+01,2.3132500e+01,1.7168700e+01,1.9879500e+01,1.8433700e+01,3.5783100e+01,3.5241000e+01,3.5783100e+01,4.5542200e+01,5.1144600e+01,4.8072300e+01,4.8975900e+01,3.0765300e+01,4.6071400e+01,3.1003000e+01,4.0867300e+01,3.0050000e+01,4.1479600e+01,4.3928600e+01,4.5000000e+01,4.9000000e+01,3.8100000e+01'">Dryland Ecosystem</button>
+                      <d-cite key="demenocal2001cultural"> </d-cite><button type="button" class="btn btn-indigo btn-sm" style="margin:0.5%" onclick="document.getElementById('time_series').value = '41.555,41.661,41.563,41.35,41.83,42.107,42.315,44.034,42.24,42.597,44.596,45.048,44.125,46.378,44.61,45.133,47.141,45.924,45.468,43.406,44.915,45.976,45.9'">Desertification</button>
+                    </div>
+                  </div>
+
+                  <div id="simulated_data" style="display:none">
+                    <p>
+                      Provide the parameters for the differential equation
+                    </p>
+                    
+                     <div class="form-row">
+                      <div class="col">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Maximum Growth Rate ($r$) </span>
+                          </div>
+                          <input type="number" class="form-control" placeholder=1 name="max_growth_rate" aria-label="max_growth_rate" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2">Carrying Capacity ($k$) </span>
+                          </div>
+                          <input type="number" class="form-control" placeholder=5.2 name="carrying_capacity" aria-label="carrying_capacity" aria-describedby="basic-addon2">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Half Saturation Constant ($b$) </span>
+                          </div>
+                          <input type="number" class="form-control" placeholder=1 name="half_saturation_constant" aria-label="half_saturation_constant" aria-describedby="basic-addon3">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon4">Bifurcation Parameter ($c$) </span>
+                          </div>
+                          <input type="number" class="form-control" placeholder=1 name="bifurcation_parameter" aria-label="bifurcation_parameter" aria-describedby="basic-addon4">
+                        </div>
+                      </div>
+                    </div>
+                    <div style="text-align:center">
+                      <button type="button" class="btn btn-primary  z-depth-1" id="generate_simulated_data">Generate Data</button>
+                    </div>
+
+                  <div class="text-center loading_icon_sde" style="padding:1.5%;display:none">
+                      <div class="spinner-border text-primary"></div>
+                      <div id="loading_message_sde" style="padding:1%"></div>
+                  </div>
+
+                  </div>
+              </div>
             </div>
           </div>
-          <div style="text-align:center;">
+          {% comment %} <div id="real_data" style="text-align:center;">
               <div class="row">
                 <div class="col-12">
                   <label></label>
@@ -110,15 +220,58 @@
                   <button type="button" class="btn btn-light  z-depth-1" onclick="document.getElementById('time_series').value = ''">Clear</button>
                 </div>
               </div>
+          </div>  {% endcomment %}
+
+            
+
+          <div id="simulated_data" style="text-align:center;">
+            <div class="row">
+              <div class="col-12">
+                <label></label>
+                <textarea class="form-control z-depth-1" name="time_series" id="time_series" cols="30" rows="5" style="font-size:12pt" placeholder="   Time Series Data Used ..." readonly="readonly"></textarea>
+                <br>
+                <button type="button" class="btn btn-indigo  z-depth-1" id="visualize_time_series">Visualize</button>
+                <button type="button" class="btn btn-light  z-depth-1" onclick="document.getElementById('time_series').value = ''">Clear</button>
+                
+              </div>
+            </div>
           </div>
-          <div class="generate_output" style="display:none;padding:1%">
+
+
+          <div class="text-center loading_icon_plot" style="padding:5%;display:none">
+              <div class="spinner-border text-primary"></div>
+              <div id="loading_message_plot" style="padding:1%"></div>
+          </div>
+
+          <div class="generate_plot" style="display:none;padding:1%">
             <div class="alert alert-secondary" role="alert">
               <b>Time Series Visualization</b>
             </div>
             <p> The given time series is visualized by the line plot below. Kindly verify the correctness of the input data point to be processed by the model . </p>
             <div class="linegraph" style="text-align:center;padding-left:10%;padding-right:10%">
-              <canvas id="timeseries_visualization" width="10%"></canvas>
+              <canvas id="timeseries_visualization" width="100%"></canvas>
             </div>
+
+            <br>
+            <div style="text-align:center;">
+              <div class="row">
+                <div class="col-12">
+                  <button type="button" class="btn btn-indigo  z-depth-1" id="make_prediction">Predict Transition Using EWSNet</button>
+                </div>
+              </div>
+            </div>
+
+      
+          </div>
+
+
+          <div class="text-center loading_icon_model" style="padding:5%;display:none">
+              <div class="spinner-border text-primary"></div>
+              <div id="loading_message_model" style="padding:1%"></div>
+          </div>
+
+          <div class="generate_output" style="display:none;padding:1%">
+            
             <div markdown="span" class="alert alert-secondary" role="alert">
               <b>Model Prediction</b>
             </div>
@@ -126,11 +279,12 @@
             <div class="barchart" style="text-align:center;padding-left:10%;padding-right:10%">
               <canvas id="model_prediction" width="10%"></canvas>
             </div>
-          <div markdown="span" class="alert alert-danger" role="alert">
-              <h4><b> Conclusion</b></h4>
-              The characteristics in the given input time series suggest that it is likely to under go <b><span id="transition_type"></span></b> in the near future.
+            <div markdown="span" class="alert alert-danger" role="alert">
+                <h4><b> Conclusion</b></h4>
+                The characteristics in the given input time series suggest that it is likely to under go <b><span id="transition_type"></span></b> in the near future.
+            </div>
           </div>
-          </div>
+           <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
           <script src="{{'assets/js/ml/script.js' | relative_url }}"></script>
 
