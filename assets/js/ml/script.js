@@ -190,19 +190,20 @@ function argMax(array) {
 }
 
 function generate_simulated_data(){
-  var c=1; 
-  var r=1;      
+  var c =  parseFloat($("input[name*='bifurcation_parameter']").val());
+  var k =  parseFloat($("input[name*='carrying_capacity']").val());
+  var r =  parseFloat($("input[name*='max_growth_rate']").val());
+  var b =  parseFloat($("input[name*='half_saturation_constant']").val());
+
   const n_max=400;    
   const c_max=3;
   const t_max=300;
   const dt=0.01;
   var da = (c_max-c)/n_max;
-  var b = 1;
   var n = 0;
   var t = 0;
   var h = 1;
   var corr = 0.0;     
-  var k = 5.2;
   var sigma = 0.10
   var x0 = 70+Math.random();
   var x = x0;
