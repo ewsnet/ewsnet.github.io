@@ -225,7 +225,7 @@ function generate_saddle_node(){
   const c_max=3;
   const t_max=300;
   const dt=0.01;
-  var da = (c_max-c)/n_max;
+  var da = (c_max-c)/2*n_max;
   var n = 0;
   var t = 0;
   var h = 1;
