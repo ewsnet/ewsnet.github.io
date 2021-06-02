@@ -64,8 +64,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:   blog # your blog must have a name for it to show up in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_name:   Blog # your blog must have a name for it to show up in the nav bar
+blog_description: Explaining Fundamentals in Simple Terms
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -130,6 +130,8 @@ plugins:
   - jekyll/scholar
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-pdf-embed
+
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

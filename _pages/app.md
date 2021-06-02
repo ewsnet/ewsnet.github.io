@@ -1,7 +1,7 @@
 ---
 layout: model
 permalink: /model/
-title: demo
+title: app
 description: Deep learning method to forecast and characterize transitions in complex natural systems.
 nav: true
 

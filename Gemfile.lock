@@ -144,6 +144,8 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-paginate-v2 (3.0.0)
       jekyll (>= 3.0, < 5.0)
+    jekyll-pdf-embed (1.1.2)
+      jekyll
     jekyll-readme-index (0.3.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-redirect-from (0.16.0)
@@ -285,6 +287,7 @@ DEPENDENCIES
   jekyll-email-protect
   jekyll-github-metadata
   jekyll-paginate-v2
+  jekyll-pdf-embed
   jekyll-scholar
   jekyll-twitter-plugin
   jemoji

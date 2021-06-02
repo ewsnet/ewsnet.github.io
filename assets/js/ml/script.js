@@ -87,7 +87,7 @@ function predict_transition(){
   series   = series.replace(/\s\s+/g, ',');
   series   = series.replace(/[,]+/g, ',');
   series   = series.split(',').map(function(series){return Number(series);});
-
+  series   = series.slice(0,400)
   // var series = generate_simulated_data(); 
   // $("#time_series").val(series);
   
@@ -179,9 +179,27 @@ function plot_timeseries(){
               borderWidth:1.5,
               pointRadius: 0,
               // lineTension: 0,
-          }]
+          }],
       },
       options: {
+        annotation: {
+          annotations: [
+            {
+              drawTime: "afterDatasetsDraw",
+              type: "line",
+              mode: "vertical",
+              scaleID: "x-axis-0",
+              value: 400,
+              borderWidth: 2.5,
+              borderColor: "darkcyan",
+              label: {
+                content: "Last Time Step Considered",
+                enabled: true,
+                position: "top"
+              }
+            }
+          ]
+        },
         legend: {
           display: false,
         },
@@ -221,11 +239,11 @@ function generate_saddle_node(){
   var r =  parseFloat($("#saddle_node_bifurcation :input[name*='max_growth_rate']").val());
   var b =  parseFloat($("#saddle_node_bifurcation :input[name*='half_saturation_constant']").val());
 
-  const n_max=400;    
+  const n_max=1000;    
   const c_max=3;
   const t_max=300;
   const dt=0.01;
-  var da = (c_max-c)/2*n_max;
+  var da = (c_max-c)/n_max;
   var n = 0;
   var t = 0;
   var h = 1;
@@ -258,8 +276,8 @@ function generate_transcritical(){
   var c =  parseFloat($("#transcritical_bifurcation :input[name*='max_grazing_rate']").val());
   var k =  parseFloat($("#transcritical_bifurcation :input[name*='carrying_capacity']").val());
   var r =  parseFloat($("#transcritical_bifurcation :input[name*='max_growth_rate']").val());
-  const n_max=400;    
-  const c_max=3;
+  const n_max=1000;    
+  const c_max=2;
   const t_max=300;
   const dt=0.01;
   var da = (c_max-c)/n_max;

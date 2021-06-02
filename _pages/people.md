@@ -1,12 +1,11 @@
 ---
 layout: page
-permalink: /teaching/
+permalink: /people/
 title: people
-description: I have been involved as a Teaching Assistant (TA) for the following courses.
+description: 
 nav: true
 ---
 
 ***
-###### **CS503** - _Machine Learning_, _Spring 2021_
-###### Indian Institute of Technology, Ropar
+###### **Meet the team behind EWSNet** 
 ***
