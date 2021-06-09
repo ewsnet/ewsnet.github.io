@@ -22,7 +22,7 @@
   </head>
 
   <d-front-matter>
-    <script async type="text/json">{
+    {% comment %} <script async type="text/json">{
       "title": "{{ page.title }}",
       "description": "{{ page.description }}",
       "published": "{{ page.date | date: '%B %-d, %Y' }}",
@@ -54,7 +54,7 @@
           }
         ]
       }
-    }</script>
+    }</script> {% endcomment %}
   </d-front-matter>
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
