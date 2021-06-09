@@ -6,9 +6,9 @@ description: Deep learning method to forecast and characterize transitions in co
 nav: true
 
 authors:
-  - name: Anonymous
+  - name: Smita Deb, Sahil Sidheekh
     affiliations:
-      name: Where Ideas Bloom
+      name: IIT Ropar
 
 bibliography: ewsnet.bib
 img: /assets/img/teaser/ewsnet.png

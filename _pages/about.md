@@ -24,3 +24,13 @@ Interdisciplinary research is key to understand this complex heteregenous world.
 <!-- Machine learning [IIT Ropar](https://www.iitrpr.ac.in/), with strong research interests in machine learning, deep learning, and computer vision. I am a part of the [LSAIML](https://cse.iitrpr.ac.in/ckn/index.html) team headed by [Dr. Narayanan C. K](https://cse.iitrpr.ac.in/ckn/people/ckn.html). -->
 
 We are a group of passionate researchers who enjoy thinking beyond the boundaries of individual disciplines, inorder to better understand and impact the world around. If you would like to collaborate on projects, or provide feedback, please feel free to reach out through [email](mailto:ewsnet.iitrpr@gmail.com) :mailbox_closed:.
+
+<div class="post">
+  <div class="row" style="padding:1%">
+    <div class="col-3"></div> 
+    <div class="col-6" style="text-align:center">
+      <div class="list-group list-group-horizontal">
+        <a href="/model"> <button class="btn btn-outline-secondary  z-depth-1" style="text-align:center"> Try Model Now !</button></a>
+      </div>    
+    </div>
+</div>

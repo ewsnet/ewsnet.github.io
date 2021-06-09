@@ -74,51 +74,17 @@
 
           <d-byline> </d-byline>
           {% comment %} <d-article > {% endcomment %}
-          
-          EWSNet is a <b>deep learning</b> model trained to anticipate transitions and regime shifts in complex dynamical systems. This website provides a <b> working example </b> of a trained EWSNet model that runs in your browser and can be used to make predictions on time series data. 
-          For the broader general audience, we begin with an introduction to machine learning and how EWSNet fits into the context.
-          <br>
-          <div class="alert alert-secondary" role="alert" style="margin-top:2%">
-            <b>Introduction </b>
-          </div>
-          <div class="alert alert-light" role="alert">
-            <h6> <b> What is machine learning ? </b></h6>
-            <p>
-            Maintaining a level of abstraction, human intelligence, and decision-making can be understood as analogies to <b> mathematical functions </b>. The inference that we make is essentially a function that processes a set of input sensory signals, mapping it to some meaningful target domain.
-            For example, when one infers <i>that is an apple</i>, it can be understood as a function that maps visual sensory signals to a known space of objects. What constitutes knowledge and intelligence then is learning such functions, and human beings learn from experience.
-            </p>
-            <p>
-            On similar lines, one way to enable machines to make inferences is to model the task using a <b>parameterized</b> function that maps data in some input space to a desired target space.
-            Machine 'learning' then refers to finding the optimal parameters for the function that best explains the data for the task at hand. Utilizing samples of data in the input and target spaces, one can learn the function that maps the input domain to the target domain. 
-            This enables performing inference on a new/unseen data point. This is popularly known as supervised learning and constitutes the base for the functioning of EWSNet.
-            </p>
-
-
-            <div class="row mt-3">
-              <div class="col-sm mt-3 mt-md-0 col-11" style="padding:2%;margin:2%">
+           <div class="row mt-3">
+              <div class="col-sm mt-3 mt-md-0 col-11" style="padding:2%">
                     <img class="img-fluid rounded z-depth-1" src="/assets/img/teaser/lstmfcn.png">
               </div>
-            </div>
-
-            <h6> <b> What is Deep learning / Neural Networks and why use them  ? </b></h6>
+          </div>
+          <div class="alert alert-light" role="alert">
             <p>
-              Deep neural networks are essentially parameterized functions, proven to be universal function approximators. 
-              Efficiently learning from data using classical machine learning models often required handcrafting efficient feature representations for the data.
-              The advent of convolutional neural networks enabled stacking multiple neural network layers and going <i>deep</i>, to <b>automatically extract features</b> that are important for learning, from raw input data.
+            The <b>EWSNet</b> is built to serve as an indicator in varied domains where a <b>tipping</b> is suspected.
+            It comprises of the fully convolutional blocks (FCN) and the long-short term memory (LSTM) blocks that learn temporal dependencies in the time series.
+            It has been trained using <b>simulated</b> time-series data from nine different models, including biological, ecological, and climate models displaying sudden, smooth, and no transitions.
             </p>
-            
-
-            <h6> <b> Understanding the EWSNet Architecture </b> </h6>
-            <p>
-              In their original form, neural networks were built to process IID data samples in fixed dimensional spaces.
-              On the contrary, most real-life data such as time-series, text, audio, video, etc., are <i>sequential</i> in nature and of <i>variable length</i>.
-              To be able to process such sequential data and capture the inherent dependence that is present, novel neural network architectures have been proposed, the most popular among them being <i>recurrent neural networks (RNN)</i>. RNNs process sequential data in an iterative manner, keeping a memory of data at the previous time steps. However, capturing long-term dependencies is difficult with RNNs.
-              An <b>LSTM</b> is a sophisticated RNN architecture that addresses this issue by enabling the addition and deletion of information to a common memory that is propagated across time steps.
-            </p>
-            <p>
-              Thus, EWSNet is a parameterized function that employs an LSTM to capture long-term dependencies in the sequential time series data, in addition to a fully convolutional submodule that helps automatically extract complex non-linearities from the data, requisite to learn the characteristics indicative of a future transition.
-            </p>
-            
           </div>
           <div class="alert alert-secondary" role="alert">
             <b>Analyze a time series for potential transitions in future</b>
@@ -257,7 +223,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon4">$c$ </span>
                                 </div>
-                                <input type="number" class="form-control" value=1 placeholder="1 (should be less than 3)"  name="bifurcation_parameter" aria-label="bifurcation_parameter" aria-describedby="basic-addon4">
+                                <input type="number" class="form-control" placeholder=1 value=1 name="bifurcation_parameter" aria-label="bifurcation_parameter" aria-describedby="basic-addon4">
                               </div>
                             </div>
                           </div>
