@@ -32,6 +32,7 @@ $( ".display_simulated_data" ).click(function() {
   $("#real_world_data").hide()
   $("#simulated_data").show()
   $("#steps_to_consider").val(400);
+  $(":input[name*='steps_to_consider']").val(400)
 });
 
 $( ".display_saddle_node_bifurcation" ).click(function() {
