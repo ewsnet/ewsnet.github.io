@@ -2,12 +2,12 @@
 layout: about
 title: about
 permalink: /
-description: <a href ="#">Unveiling New Dimensions To Understanding Natural Dynamical Systems</a>
+description: <a href ="#">Unveiling New Dimensions To Understand Dynamical Systems</a>
 # <a href="#">Indian Institute of Technology Ropar</a>. Punjab. 
 
 profile:
   align: right
-  image: teaser/lstmfcn.png
+  image: teaser/ewsnet.png
   address: >
    
 
@@ -18,8 +18,7 @@ news: true  # includes a list of news items
 
 Hi :wave: ! Welcome to the offical webpage for EWSNet, a <b>deep learning </b> framework for modeling and anticipating regime shifts in <b> dynamical systems </b>. 
 
-Interdisciplinary research is key to understand this complex heteregenous world. Through machine learning, we intend to introduce and unveil to the community, a new dimension for modeling, understanding and anticipating the behaviours of natural dynamical systems. 
-
+Interdisciplinary research is key to understand this complex heteregenous world. Through machine learning, we introduce and unveil to the community, a new dimension for modeling, understanding, and anticipating the behaviours of dynamical systems. 
 
 <!-- Machine learning [IIT Ropar](https://www.iitrpr.ac.in/), with strong research interests in machine learning, deep learning, and computer vision. I am a part of the [LSAIML](https://cse.iitrpr.ac.in/ckn/index.html) team headed by [Dr. Narayanan C. K](https://cse.iitrpr.ac.in/ckn/people/ckn.html). -->
 
@@ -30,7 +29,7 @@ We are a group of passionate researchers who enjoy thinking beyond the boundarie
     <div class="col-3"></div> 
     <div class="col-6" style="text-align:center">
       <div class="list-group list-group-horizontal">
-        <a href="/model"> <button class="btn btn-outline-secondary  z-depth-1" style="text-align:center"> Try Model Now !</button></a>
+        <a href="/model"> <button class="btn btn-outline-secondary  z-depth-1" style="text-align:center"> Try EWSNet Now !</button></a>
       </div>    
     </div>
 </div>
