@@ -6,25 +6,24 @@ description:
 img: /assets/img/sahil.jpeg /assets/img/partha.jpg /assets/img/ck.png /assets/img/chris.jpeg /assets/img/smita.jpeg 
 nav: true
 ---
-<div class="alert alert-info" role="alert">
+<div class="alert alert-secondary" role="alert">
 Meet the wonderful team behind EWSNet
 </div>
 
 
 ### Faculty Members
 <hr>
-<table style="width:75%;margin:3%">
+<table style="width:90%;margin:3%">
   <tr>
-    <td style="text-align:center margin:5%;padding:5%">
-      <img class="img-fluid img-center img-responsive z-depth-3 rounded-circle" style="width:22vw;height:10.5vw" src="/assets/img/partha.jpg">
+    <td style="text-align:center;margin:3%;padding:2%">
+      <img class="img-fluid img-center img-responsive z-depth-3 rounded-circle" style="width:11vw;height:10.5vw" src="/assets/img/partha.jpg">
     </td>
-    <td style="text-align:center margin:5%;padding:5%">
-      <img class="img-fluid img-center img-responsive  z-depth-3 rounded-circle" style="width:22vw;height:10.5vw" src="/assets/img/ck.png">
+    <td style="text-align:center;margin:3%;padding:2%">
+      <img class="img-fluid img-responsive  z-depth-3 rounded-circle" style="width:11vw;height:10.5vw" src="/assets/img/ck.png">
     </td>
-    <td style="text-align:center margin:5%;padding:5%">
-      <img class="img-fluid img-center z-depth-3 rounded-circle" src="/assets/img/chris.jpeg" style="width:22vw;height:10.5vw">
+    <td style="text-align:center;margin:3%;padding:2%">
+      <img class="img-fluid img-center img-responsive  z-depth-3 rounded-circle" src="/assets/img/chris.jpeg" style="width:11vw;height:10.5vw">
     </td>
-    
   </tr>
   <tr>
     <td style="text-align:center">
@@ -32,19 +31,18 @@ Meet the wonderful team behind EWSNet
     </td>
     <td style="text-align:center"><a href="https://cse.iitrpr.ac.in/ckn/people/ckn.html"> <b> Dr. Narayanan C. Krishnan </b></a> <br> <b>Department of Computer Science </b><br> Indian Institute of Technology, Ropar</td>
     <td style="text-align:center"><a href="https://research-information.bris.ac.uk/en/persons/chris-f-clements"> <b>Dr. Christopher F. Clements</b></a> <br> <b>School of Biological Sciences</b><br> University of Bristol</td>
-    
   </tr>
 </table>
 
 <hr>
 ### Students
 <hr>
-<table style="width:75%;margin:3%">
+<table style="width:80%;text-align:center;margin-left:8%">
   <tr>
-    <td style="text-align:center; margin:3%;padding:5%">
+    <td style="text-align:center;margin:1%;padding:6%">
       <img class="img-fluid img-center img-responsive z-depth-3 rounded-circle" style="width:10vw;height:9.5vw" src="/assets/img/smita.jpeg" >
     </td>
-    <td style="text-align:center; margin:2%;padding:5%">
+    <td style="text-align:center;margin:1%;padding:6%">
       <img class="img-fluid img-center img-responsive  z-depth-3 rounded-circle" style="width:10vw;height:9.5vw" src="/assets/img/sahil.jpeg">
     </td>
     <td></td>

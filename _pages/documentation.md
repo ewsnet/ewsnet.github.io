@@ -3,7 +3,7 @@ layout: page
 permalink: /documentation/
 pdf_file: "/assets/pdf/EWSNET_DOCUMENTATION_FULL.pdf"
 title: documentation
-description: Documentation and User Guide For EWSNet
+description: 
 nav: true
 ---
 
@@ -12,6 +12,10 @@ nav: true
   {{ page._styles }}
 </style>
 {% endif %}
+
+<div class="alert alert-secondary" role="alert">
+Documentation and User Guide For EWSNet
+</div>
 
 <div class="post">
   Use the links below to access the official code and documentation for EWSNet.
@@ -46,7 +50,6 @@ nav: true
       </article>
     </div> -->
     <div class="col-12">  
-      <h6><b>User Guide</b></h6>
       <article class="post-content" style="margin:2%;padding:2%">
         {{ content }}
         {% pdf "/assets/pdf/EWSNET_DOCUMENTATION_FULL.pdf" %}

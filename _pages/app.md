@@ -2,7 +2,7 @@
 layout: model
 permalink: /model/
 title: app
-description: Deep learning method to forecast and characterize transitions in complex natural systems.
+description: <div class="alert alert-primary" role="alert"><b>Deep learning method to forecast and characterize transitions in complex natural systems.</b></div>
 nav: true
 
 bibliography: ewsnet.bib

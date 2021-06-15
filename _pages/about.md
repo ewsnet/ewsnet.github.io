@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: <a href ="#">Unveiling New Dimensions To Understand Dynamical Systems</a>
+description: <div class="alert alert-secondary" role="alert">Unveiling New Dimensions To Study and Understand Dynamical Systems</div> <hr>
 # <a href="#">Indian Institute of Technology Ropar</a>. Punjab. 
 
 profile:
@@ -10,11 +10,11 @@ profile:
   image: teaser/ewsnet.png
   address: >
    
-
 news: true  # includes a list of news items
 # selected_papers: true # includes a list of papers marked as "selected={true}"
 # social: true  # includes social icons at the bottom of the page
 ---
+
 
 Hi :wave: ! Welcome to the offical webpage for EWSNet, a <b>deep learning </b> framework for modeling and anticipating regime shifts in <b> dynamical systems </b>. 
 
@@ -33,3 +33,4 @@ We are a group of passionate researchers who enjoy thinking beyond the boundarie
       </div>    
     </div>
 </div>
+<hr>
