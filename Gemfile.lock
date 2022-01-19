@@ -289,6 +289,7 @@ DEPENDENCIES
   jekyll-paginate-v2
   jekyll-pdf-embed
   jekyll-scholar
+  jekyll-sitemap
   jekyll-twitter-plugin
   jemoji
   unicode_utils
