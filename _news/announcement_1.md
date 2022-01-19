@@ -4,4 +4,4 @@ date: 2021-1-19 15:59:00-
 inline: true
 ---
 
-The preprint <b><i>Machine Learning Methods Trained on Simple Models can Anticipate Crtitical Transitions in Complex Systems </i></b> is up on bioRxiv :sparkles:
+The preprint of our work on <b>EWSNet</b> is now available on bioRxiv. Check it out [here](https://www.biorxiv.org/content/10.1101/2021.03.15.435556v1.abstract):zap:
